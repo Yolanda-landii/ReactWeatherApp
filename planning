@@ -1,0 +1,45 @@
+Real-time Weather Info:
+- Display current weather conditions (temperature, humidity, wind speed, etc.).
+- Provide hourly and daily weather forecasts.
+- Allow users to switch between overall daily weather and hourly weather.
+
+Location-Based Forecasting:
+
+- Automatically detect the user’s location if permission is granted.
+- Allow users to search for and display weather information for specific locations.
+
+Weather Alerts:
+
+- Send push notifications for severe weather alerts in the user's location.
+
+Multiple Locations:
+
+- Allow users to save and switch between multiple locations for weather information.
+
+Customization:
+
+- Allow users to customize the app's theme.
+- Allow users to change the display units (e.g., Celsius vs. Fahrenheit).
+
+Offline Access:
+- Provide cached weather data for offline access.
+
+Performance:
+- Optimize the app for fast loading and smooth performance.
+
+Privacy & Security:
+- Protect user data and privacy according to relevant laws and regulations.
+
+User Interface:
+
+- Weather Display: 
+-- Show weather conditions such as temperature, humidity, wind speed, etc., for the current and searched locations.
+- Search Bar:
+-- Allow users to search for a location.
+- Saved Locations: 
+-- Display a list of saved locations for easy access.
+- Customization Options: Provide UI elements to change the theme and display units.
+- Navigation: 
+-- Easy-to-use navigation to switch between hourly and daily weather forecasts.
+- Notifications: 
+-- Indicate weather alerts and background processes.
