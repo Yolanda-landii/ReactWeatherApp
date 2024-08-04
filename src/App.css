@@ -37,19 +37,6 @@
   }
 }
 
-/* WeatherCard.css */
-
-.weather-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  margin-bottom: 20px;
-  width: 100%;
-  max-width: 600px;
-}
-
-/* App.css */
 
 body {
   margin: 0;
@@ -70,16 +57,17 @@ body {
   margin-bottom: 20px;
   width: 100%;
   max-width: 600px;
+  margin-right: 650px;
 }
 
 .weather-card {
   background: #2c3e50;
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  margin-bottom: 20px;
-  width: 100%;
-  max-width: 600px;
+  border-radius: 20px;
+  padding: 50px;
+  text-align:center;
+  margin-bottom: 50px;
+  width: 200%;
+  max-width: 2000px;
 }
 
 .daily-forecast {
@@ -105,11 +93,6 @@ body {
   align-items: center;
   padding: 20px;
 }
-
-.search-bar {
-  margin-bottom: 20px;
-}
-
 .forecast-view-toggle {
   margin: 20px 0;
   display: flex;
