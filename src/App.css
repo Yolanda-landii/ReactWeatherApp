@@ -1,137 +1,215 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(to bottom right, #2c3e50, #4ca1af);
-  color: #fff;
-}
-
+/* General Styles */
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
 }
 
-.search-bar {
+.weather-card, .daily-weather-card, .hourly-weather-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
   margin-bottom: 20px;
-  width: 100%;
-  max-width: 600px;
-  margin-right: 650px;
 }
+/* src/components/Weather/DailyWeatherCard.css */
 
-.weather-card {
-  background: #2c3e50;
-  border-radius: 20px;
-  padding: 50px;
-  text-align:center;
-  margin-bottom: 50px;
-  width: 200%;
-  max-width: 2000px;
-}
-
-.daily-forecast {
+.daily-weather-card {
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distributes space between items */
+  gap: 20px; /* Adds space between items */
+  margin-bottom: 20px;
 }
 
 .daily-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 10px;
-  text-align: center;
-  width: 100px;
-}
-
-.daily-card p {
-  margin: 5px 0;
-}
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   padding: 20px;
+  width: 18%; /* Adjust width as needed */
+  text-align: center; /* Centers text and icons */
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for better visual separation */
 }
-.forecast-view-toggle {
-  margin: 20px 0;
+/* src/components/Weather/HourlyWeatherCard.css */
+
+.hourly-weather-card {
   display: flex;
-  gap: 10px;
-}
-
-.toggle-button {
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  background-color: #ccc;
-  border-radius: 5px;
-}
-
-.toggle-button.active {
-  background-color: #1976d2;
-  color: white;
-}
-
-.weather-card {
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distributes space between items */
+  gap: 20px; /* Adds space between items */
   margin-bottom: 20px;
 }
 
-.hourly-weather-card, .daily-weather-card {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
-  justify-content: center;
+.hourly-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 30%; /* Adjust width as needed, e.g., 30% for three items per row */
+  text-align: center; /* Centers text and icons */
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for better visual separation */
 }
 
-.hourly-card, .daily-card {
-  background-color: #9598c2;
-  border-radius: 10px;
-  padding: 5px;
-  text-align: center;
-  width: 150px;
+.weather-icon {
+  width: 50px; /* Adjust icon size as needed */
+  height: 50px;
+  margin: 10px 0; /* Adds space around the icon */
+}
+
+
+.weather-icon {
+  width: 50px; /* Adjust icon size as needed */
+  height: 50px;
+  margin: 10px 0; /* Adds space around the icon */
+}
+
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.search-bar button {
+  padding: 10px;
+}
+
+.saved-locations {
+  margin-top: 20px;
+}
+
+.saved-locations ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.saved-locations li {
+  cursor: pointer;
+}
+
+.saved-locations li:hover {
+  background-color: #f0f0f0;
 }
 
 .weather-icon {
   width: 50px;
   height: 50px;
+}
+
+.settings-form {
+  margin-top: 20px;
+}
+
+.settings-form select {
+  margin-left: 10px;
+}
+
+.forecast-view-toggle {
+  margin-bottom: 20px;
+}
+
+.toggle-button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.toggle-button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.weather-alert {
+  margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 320px) {
+  .container {
+    padding: 10px;
+  }
+
+  .weather-card, .daily-weather-card, .hourly-weather-card {
+    padding: 10px;
+  }
+
+  .search-bar input {
+    width: 70%;
+  }
+
+  .search-bar button {
+    width: 25%;
+  }
+
+  .settings-form select {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .weather-card, .daily-weather-card, .hourly-weather-card {
+    padding: 15px;
+  }
+
+  .search-bar input {
+    width: 80%;
+  }
+
+  .search-bar button {
+    width: 20%;
+  }
+}
+
+@media (max-width: 768px) {
+  .weather-card, .daily-weather-card, .hourly-weather-card {
+    padding: 20px;
+  }
+
+  .search-bar input {
+    width: 90%;
+  }
+
+  .search-bar button {
+    width: 10%;
+  }
+
+  .settings-form select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 20px;
+  }
+}
+/* App.css */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+}
+
+.light-mode {
+  background-image: url('./assets/pexels-brett-sayles-1660561.jpg');
+}
+
+.dark-mode {
+  background-image: url('./assets/pexels-eberhardgross-1624496.jpg');
+}
+
+/* Additional styling */
+.container {
+  padding: 20px;
 }
