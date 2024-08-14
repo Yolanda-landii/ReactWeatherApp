@@ -1,0 +1,215 @@
+/* General Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.weather-card, .daily-weather-card, .hourly-weather-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+/* src/components/Weather/DailyWeatherCard.css */
+
+.daily-weather-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distributes space between items */
+  gap: 20px; /* Adds space between items */
+  margin-bottom: 20px;
+}
+
+.daily-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 18%; /* Adjust width as needed */
+  text-align: center; /* Centers text and icons */
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for better visual separation */
+}
+/* src/components/Weather/HourlyWeatherCard.css */
+
+.hourly-weather-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distributes space between items */
+  gap: 20px; /* Adds space between items */
+  margin-bottom: 20px;
+}
+
+.hourly-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 30%; /* Adjust width as needed, e.g., 30% for three items per row */
+  text-align: center; /* Centers text and icons */
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for better visual separation */
+}
+
+.weather-icon {
+  width: 50px; /* Adjust icon size as needed */
+  height: 50px;
+  margin: 10px 0; /* Adds space around the icon */
+}
+
+
+.weather-icon {
+  width: 50px; /* Adjust icon size as needed */
+  height: 50px;
+  margin: 10px 0; /* Adds space around the icon */
+}
+
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.search-bar button {
+  padding: 10px;
+}
+
+.saved-locations {
+  margin-top: 20px;
+}
+
+.saved-locations ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.saved-locations li {
+  cursor: pointer;
+}
+
+.saved-locations li:hover {
+  background-color: #f0f0f0;
+}
+
+.weather-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.settings-form {
+  margin-top: 20px;
+}
+
+.settings-form select {
+  margin-left: 10px;
+}
+
+.forecast-view-toggle {
+  margin-bottom: 20px;
+}
+
+.toggle-button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.toggle-button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.weather-alert {
+  margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 320px) {
+  .container {
+    padding: 10px;
+  }
+
+  .weather-card, .daily-weather-card, .hourly-weather-card {
+    padding: 10px;
+  }
+
+  .search-bar input {
+    width: 70%;
+  }
+
+  .search-bar button {
+    width: 25%;
+  }
+
+  .settings-form select {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .weather-card, .daily-weather-card, .hourly-weather-card {
+    padding: 15px;
+  }
+
+  .search-bar input {
+    width: 80%;
+  }
+
+  .search-bar button {
+    width: 20%;
+  }
+}
+
+@media (max-width: 768px) {
+  .weather-card, .daily-weather-card, .hourly-weather-card {
+    padding: 20px;
+  }
+
+  .search-bar input {
+    width: 90%;
+  }
+
+  .search-bar button {
+    width: 10%;
+  }
+
+  .settings-form select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 20px;
+  }
+}
+/* App.css */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+}
+
+.light-mode {
+  background-image: url('./assets/pexels-brett-sayles-1660561.jpg');
+}
+
+.dark-mode {
+  background-image: url('./assets/pexels-eberhardgross-1624496.jpg');
+}
+
+/* Additional styling */
+.container {
+  padding: 20px;
+}
