@@ -8,83 +8,78 @@ const useWeather = () => {
 
   const API_KEY = process.env.REACT_APP_WEATHER_API_KEY; 
 
-  const fetchWeather = async (location, unit) => {
+  const fetchWeather = async (location) => {
     try {
       const response = await axios.get(
-        `https://api.weatherbit.io/v2.0/current?city=${location}&units=${unit}&key=${API_KEY}`
+        `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${location}`
       );
       console.log(response.data); 
       setWeatherData(response.data);
-      await fetchHourlyWeather(location, unit);
-      await fetchDailyWeather(location, unit); // Ensure dailyData is set
+      await fetchHourlyWeather(location);
+      await fetchDailyWeather(location);
     } catch (error) {
       console.error('Error fetching weather data:', error.response ? error.response.data : error.message);
       alert('Error fetching weather data. Please try again.');
     }
   };
 
-  // Fetch weather by coordinates
-  const fetchWeatherByCoords = async (lat, lon, unit) => {
+  const fetchWeatherByCoords = async (lat, lon) => {
     try {
       const response = await axios.get(
-        `https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${lon}&units=${unit}&key=${API_KEY}`
+        `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${lat},${lon}`
       );
       console.log(response.data); 
       setWeatherData(response.data);
-      await fetchHourlyWeatherByCoords(lat, lon, unit); 
-      await fetchDailyWeatherByCoords(lat, lon, unit);  
+      await fetchHourlyWeatherByCoords(lat, lon);
+      await fetchDailyWeatherByCoords(lat, lon);
     } catch (error) {
       console.error('Error fetching weather data by coordinates:', error.response ? error.response.data : error.message);
       alert('Error fetching weather data. Please try again.');
     }
   };
 
-  // Fetch hourly weather
-  const fetchHourlyWeather = async (location, unit) => {
+  const fetchHourlyWeather = async (location) => {
     try {
       const response = await axios.get(
-        `https://api.weatherbit.io/v2.0/forecast/hourly?city=${location}&units=${unit}&key=${API_KEY}`
+        `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}&hours=24`
       );
-      setHourlyData(response.data);
+      setHourlyData(response.data.forecast.forecastday[0].hour);
     } catch (error) {
       console.error('Error fetching hourly weather data:', error.response ? error.response.data : error.message);
       alert('Error fetching hourly weather data. Please try again.');
     }
   };
 
-  // Fetch hourly weather by coordinates
-  const fetchHourlyWeatherByCoords = async (lat, lon, unit) => {
+  const fetchHourlyWeatherByCoords = async (lat, lon) => {
     try {
       const response = await axios.get(
-        `https://api.weatherbit.io/v2.0/forecast/hourly?lat=${lat}&lon=${lon}&units=${unit}&key=${API_KEY}`
+        `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${lat},${lon}&hours=24`
       );
-      setHourlyData(response.data);
+      setHourlyData(response.data.forecast.forecastday[0].hour);
     } catch (error) {
       console.error('Error fetching hourly weather data by coordinates:', error.response ? error.response.data : error.message);
       alert('Error fetching hourly weather data. Please try again.');
     }
   };
 
-  // Fetch daily weather
-  const fetchDailyWeather = async (location, unit) => {
+  const fetchDailyWeather = async (location) => {
     try {
       const response = await axios.get(
-        `https://api.weatherbit.io/v2.0/forecast/daily?city=${location}&units=${unit}&key=${API_KEY}`
+        `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}&days=7`
       );
-      setDailyData(response.data);
+      setDailyData(response.data.forecast.forecastday);
     } catch (error) {
       console.error('Error fetching daily weather data:', error.response ? error.response.data : error.message);
       alert('Error fetching daily weather data. Please try again.');
     }
   };
 
-  // Fetch daily weather by coordinates
-  const fetchDailyWeatherByCoords = async (lat, lon, unit) => {
+  const fetchDailyWeatherByCoords = async (lat, lon) => {
     try {
       const response = await axios.get(
-        `https://api.weatherbit.io/v2.0/forecast/daily?lat=${lat}&lon=${lon}&units=${unit}&key=${API_KEY}`
+        `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${lat},${lon}&days=7`
       );
-      setDailyData(response.data);
+      setDailyData(response.data.forecast.forecastday);
     } catch (error) {
       console.error('Error fetching daily weather data by coordinates:', error.response ? error.response.data : error.message);
       alert('Error fetching daily weather data. Please try again.');

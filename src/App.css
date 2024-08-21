@@ -14,23 +14,24 @@
 /* src/components/Weather/DailyWeatherCard.css */
 
 .daily-weather-card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; /* Distributes space between items */
-  gap: 20px; /* Adds space between items */
-  margin-bottom: 20px;
+  display: flex; /* or display: grid; */
+  justify-content: space-around;
+  flex-wrap: wrap; /* To wrap cards to the next line if needed */
+  gap: 15px; /* Space between cards */
 }
 
 .daily-card {
-  border: 1px solid #ddd;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  padding: 10px;
   border-radius: 8px;
-  padding: 20px;
-  width: 18%; /* Adjust width as needed */
-  text-align: center; /* Centers text and icons */
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for better visual separation */
+  text-align: center;
+  width: 150px; /* Adjust size to your preference */
 }
-/* src/components/Weather/HourlyWeatherCard.css */
+
+.weather-icon {
+  width: 50px; /* Adjust size to your preference */
+  height: auto;
+}
 
 .hourly-weather-card {
   display: flex;
@@ -46,7 +47,7 @@
   padding: 20px;
   width: 30%; /* Adjust width as needed, e.g., 30% for three items per row */
   text-align: center; /* Centers text and icons */
-  background-color: #f9f9f9;
+  background-color: #312b2b;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for better visual separation */
 }
 

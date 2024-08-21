@@ -1,24 +1,35 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 
-const SearchBar = ({ onSearch }) => {
-  const [location, setLocation] = useState('');
+class SearchBar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      location: ''
+    };
+  }
 
-  const handleSearch = () => {
-    onSearch(location);
-    setLocation('');
+  handleSearch = () => {
+    this.props.onSearch(this.state.location);
+    this.setState({ location: '' });
   };
 
-  return (
-    <div className="search-bar">
-      <input
-        type="text"
-        value={location}
-        onChange={(e) => setLocation(e.target.value)}
-        placeholder="Search for a location"
-      />
-      <button onClick={handleSearch}>Search</button>
-    </div>
-  );
-};
+  handleChange = (event) => {
+    this.setState({ location: event.target.value });
+  };
+
+  render() {
+    return (
+      <div className="search-bar">
+        <input
+          type="text"
+          value={this.state.location}
+          onChange={this.handleChange}
+          placeholder="Search for a location"
+        />
+        <button onClick={this.handleSearch}>Search</button>
+      </div>
+    );
+  }
+}
 
 export default SearchBar;
